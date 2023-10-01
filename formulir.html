@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulir Data</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label,
+    input,
+    select,
+    textarea,
+    button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    button:hover {
+      background-color: #45a049;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="next_page.html" method="post">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+    <label for="tanggal_lahir">Tanggal Lahir:</label>
+    <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+
+    <label>Jenis Kelamin:</label>
+    <input type="radio" id="pria" name="jenis_kelamin" value="Pria" checked>
+    <label for="pria">Pria</label>
+    <input type="radio" id="wanita" name="jenis_kelamin" value="Wanita">
+    <label for="wanita">Wanita</label>
+
+    <label for="nomor_telepon">Nomor Telepon:</label>
+    <input type="tel" id="nomor_telepon" name="nomor_telepon" placeholder="Masukkan nomor telepon" pattern="[0-9]+" required>
+
+    <label for="asal_kota">Asal Kota:</label>
+    <select id="asal_kota" name="asal_kota">
+      <option value="Purwokerto" selected>Purwokerto</option>
+      <option value="Jakarta">Jakarta</option>
+      <option value="Cilacap">Cilacap</option>
+      <option value="Bandung">Bandung</option>
+    </select>
+
+    <label for="alamat">Alamat:</label>
+    <textarea id="alamat" name="alamat" placeholder="Masukkan alamat" required></textarea>
+
+    <label>Hobi:</label>
+    <input type="checkbox" id="hobi_menulis" name="hobi" value="Menulis" checked>
+    <label for="hobi_Nonton JKT48">Nonton JKT48</label>
+    <input type="checkbox" id="hobi_membaca" name="hobi" value="Membaca">
+    <label for="hobi_membaca">Membaca</label>
+    <input type="checkbox" id="hobi_bersepeda" name="hobi" value="Bersepeda">
+    <label for="hobi_Joging">Joging</label>
+
+    <label for="makanan_favorit">Makanan Favorit:</label>
+    <input list="makanan_list" id="makanan_favorit" name="makanan_favorit" placeholder="Pilih makanan favorit">
+    <datalist id="makanan_list">
+      <option value="Mie Goreng">
+      <option value="Mie Rebus">
+      <option value="Nasi Goreng">
+      <option value="Nasi Padang">
+      <option value="Ayamg Goreng">
+    </datalist>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+
+  <button onclick="nextPage()">Next Page</button>
+
+  <script>
+    function nextPage() {
+      window.location.href = "next_page.html";
+    }
+  </script>
+</body>
+</html>
